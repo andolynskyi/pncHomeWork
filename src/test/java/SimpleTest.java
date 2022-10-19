@@ -24,7 +24,6 @@ public class SimpleTest {
 
             JsonPath jsonPath = response.jsonPath();
             String capital = jsonPath.getString("capital[0].get(0)").toLowerCase();
-            System.out.println(capital);
 
             Assert.assertEquals("Status code NOT 200", 200, response.statusCode());
             Assert.assertEquals("Capital city not equal", resource, capital);
