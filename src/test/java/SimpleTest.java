@@ -22,6 +22,10 @@ public class SimpleTest {
             System.out.println(response.statusCode());
             System.out.println(response.asString());
 
+            if (response.statusCode() == 404){
+                continue;
+            }
+
             JsonPath jsonPath = response.jsonPath();
             String capital = jsonPath.getString("capital[0].get(0)").toLowerCase();
 
